@@ -4,7 +4,7 @@ import cn.nukkit.Player;
 import cn.nukkit.Server;
 import cn.nukkit.network.protocol.PlaySoundPacket;
 import cn.nukkit.scheduler.AsyncTask;
-import dev.itsu.midiplayerapi.Main;
+import dev.itsu.midiplayerapi.plugin.Main;
 import dev.itsu.midiplayerapi.core.MIDIPlayerAPI;
 import dev.itsu.midiplayerapi.entity.model.MIDIMusic;
 import dev.itsu.midiplayerapi.entity.model.instrument.Instruments;
@@ -185,7 +185,7 @@ public class MIDIPlayer {
                                 case MIDIMusic.NOTE_OFF: {
                                     /*
                                      StopSoundPacket pk = new StopSoundPacket();
-                                     pk.name = getInstrument(message.getChannel());
+                                     pk.name = getInstrumentSet(message.getChannel());
                                      player.dataPacket(pk);*/
                                     break;
                                 }

@@ -4,8 +4,11 @@ public class Instruments {
 
     private static InstrumentSetBase instrumentSet;
 
+    public static final String INSTRUMENT_SET_NOTE = "note";
+    public static final String INSTRUMENT_SET_DEFAULT = "default";
+
     static {
-        instrumentSet = new DefaultResourcePackSet();
+        instrumentSet = new NoteBlockSet();
     }
 
     public static String get(int channel) {

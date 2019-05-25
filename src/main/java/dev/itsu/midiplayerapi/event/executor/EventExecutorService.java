@@ -1,8 +1,5 @@
 package dev.itsu.midiplayerapi.event.executor;
 
-import cn.nukkit.Player;
-import dev.itsu.midiplayerapi.core.MIDIPlayerAPI;
-import dev.itsu.midiplayerapi.entity.model.MIDIMusic;
 import dev.itsu.midiplayerapi.event.MIDIEvent;
 import dev.itsu.midiplayerapi.event.listener.MIDIEventHandler;
 import dev.itsu.midiplayerapi.event.listener.MIDIEventListener;

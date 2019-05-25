@@ -1,4 +1,4 @@
-main: dev.itsu.midiplayerapi.Main
+main: dev.itsu.midiplayerapi.plugin.Main
 name: MIDIPlayerAPI
 version: 1.0.0
 api: 1.0.0
