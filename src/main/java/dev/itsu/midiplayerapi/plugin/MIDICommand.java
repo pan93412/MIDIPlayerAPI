@@ -87,7 +87,6 @@ public class MIDICommand extends Command {
                 } else {
                     commandSender.sendMessage(TextFormat.RED + "The instrument name: \"" + args[1] + "\" is not found.");
                 }
-
                 return true;
 
             case "instruments":
