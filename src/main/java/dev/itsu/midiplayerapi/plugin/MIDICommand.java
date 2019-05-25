@@ -15,7 +15,7 @@ public class MIDICommand extends Command {
     private MIDIPlayer player;
 
     public MIDICommand() {
-        super("midi", "Play MIDI Command", "/midi <play [name] | stop | pause | instrument [note | default] | instruments | list>");
+        super("midi", "Play MIDI Command", "/midi <play [name] | stop | pause | instrument [name] | instruments | list>");
     }
 
     @Override

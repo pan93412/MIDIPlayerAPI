@@ -10,6 +10,25 @@ __In development!!__
 - Put the resourcepack into NUKKIT_ROOT/resource_packs.
 - Run your server.
   
+## Commands  
+- /midi list  
+List MIDI Files which are able to play.  
+  
+- /midi play [name]  
+Play MIDI file.  
+  
+- /midi stop  
+Stop playing.  
+  
+- /midi pause  
+Pause playing.  
+  
+- /midi instruments  
+List Instruments which are able change.  
+  
+- /midi instrument [name]  
+Change an instrument to play MIDI.  
+  
 ## Documentation
 ### Get MIDI API Instance
 <pre>MIDIPlayerAPI api = MIDIPlayerAPI.Factory.getSingleton();</pre>
