@@ -53,7 +53,12 @@ public class MIDICommand extends Command {
                 }
 
                 player = new MIDIPlayer(null, MIDILoader.fromFile(file.getName().replaceAll(".mid", ""), file), true);
-                player.play();
+
+                if (player != null) {
+                    player.play(); // To prevent when player is null.
+                } else {
+                    commandSender.sendMessage(TextFormat.RED + "Something wrong when playing %s.".format(file.getName()));
+                }
 
                 return true;
 
