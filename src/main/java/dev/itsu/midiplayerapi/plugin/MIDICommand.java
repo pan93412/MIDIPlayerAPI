@@ -51,8 +51,13 @@ public class MIDICommand extends Command {
                 if (player != null) {
                     player.stop();
                 }
-
-                player = new MIDIPlayer(null, MIDILoader.fromFile(file.getName().replaceAll(".mid", ""), file), true);
+                
+                try {
+                    player = new MIDIPlayer(null, MIDILoader.fromFile(file.getName().replaceAll(".mid", ""), file), true);
+                } catch (javax.sound.midi.MidiUnavailableException e) {
+                    commandSender.sendMessage(TextFormat.RED + "Something wrong when playing MIDI files: %s".format(e.toString()));
+                    return true;
+                }
                 player.play();
 
                 return true;

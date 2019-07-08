@@ -46,17 +46,17 @@ public class PlayList {
         return this.playList;
     }
 
-    public void playFromFirst() {
+    public void playFromFirst() throws javax.sound.midi.MidiUnavailableException {
         index = 0;
         play();
     }
 
-    public void playAt(int index) {
+    public void playAt(int index) throws javax.sound.midi.MidiUnavailableException {
         this.index = index;
         play();
     }
 
-    public void playNext() {
+    public void playNext() throws javax.sound.midi.MidiUnavailableException {
         index++;
         if (index == playList.size()) {
             index = 0;
@@ -64,7 +64,7 @@ public class PlayList {
         play();
     }
 
-    public void playPrevious() {
+    public void playPrevious() throws javax.sound.midi.MidiUnavailableException {
         index--;
         if (index == -1) {
             index = playList.size() - 1;
@@ -77,7 +77,7 @@ public class PlayList {
         return playList.get(list.get(index));
     }
 
-    private void play() {
+    private void play() throws javax.sound.midi.MidiUnavailableException {
         LinkedList<String> list = new LinkedList<>(playList.keySet());
         midiPlayer = new MIDIPlayer(isBroadcast ? null : player, MIDILoader.fromPath(list.get(index), playList.get(list.get(index))), isBroadcast);
         midiPlayer.play();
@@ -113,7 +113,7 @@ public class PlayList {
 
     class EventListener implements MIDIEventListener {
         @MIDIEventHandler
-        public void onStopped(StopPlayingEvent event) {
+        public void onStopped(StopPlayingEvent event) throws javax.sound.midi.MidiUnavailableException {
             if (event.isPlayedToEnd()) {
                 if (Objects.equals(event.getMidiPlayer(), midiPlayer)) playNext();
             }

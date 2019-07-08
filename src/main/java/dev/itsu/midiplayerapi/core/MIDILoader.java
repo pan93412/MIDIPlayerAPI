@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 
 public class MIDILoader {
 
-    public static MIDIMusic fromURL(String name, URL url) {
+    public static MIDIMusic fromURL(String name, URL url) throws javax.sound.midi.MidiUnavailableException {
         try {
             return fromInputStream(name, new FileInputStream(new File(url.toURI())));
         } catch (IOException | URISyntaxException e) {
@@ -22,7 +22,7 @@ public class MIDILoader {
         }
     }
 
-    public static MIDIMusic fromPath(String name, String path) {
+    public static MIDIMusic fromPath(String name, String path) throws javax.sound.midi.MidiUnavailableException {
         return fromFile(name, new File(path));
     }
 
@@ -65,7 +65,7 @@ public class MIDILoader {
     }
     */
 
-    public static MIDIMusic fromFile(String name, File file) {
+    public static MIDIMusic fromFile(String name, File file) throws javax.sound.midi.MidiUnavailableException {
         try {
             return fromInputStream(name, new FileInputStream(file));
         } catch (IOException e) {
@@ -74,7 +74,7 @@ public class MIDILoader {
         }
     }
 
-    public static MIDIMusic fromInputStream(String name, InputStream stream) {
+    public static MIDIMusic fromInputStream(String name, InputStream stream) throws javax.sound.midi.MidiUnavailableException {
         try {
             List<Track> tracks;
             double tickPerSecond;
